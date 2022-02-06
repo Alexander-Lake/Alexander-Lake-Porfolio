@@ -5,11 +5,10 @@
 }
 body ul {
   margin: 0;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Poppins", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* Grid layout */
 
@@ -31,7 +30,6 @@ body ul {
   grid-area: logo;
   position: relative;
 }
-
 
 .nav-container {
   position: relative;
@@ -84,55 +82,66 @@ body ul {
   margin-top: auto;
   margin-bottom: 9px;
   overflow: auto;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .nav-container {
-  /* position: relative; */
-  height: 100hv;  
+  height: 100hv;
 }
-
-.nav-container .menu {
-  position: relative;
-  right: 0;
-  /* margin-top: 300px; */
-  
-  width:37%;
-  border-style: solid;
-  border-width: 1px;
- 
+.menu-container {
+  position: absolute;
+  width: 50%;
+  right: 0%;
 }
 
 ul li {
   display: inline;
   text-align: center;
-  
 }
 
 span {
   display: inline-block;
   width: 20%;
   padding: auto;
-  border-style: solid;
-  border-width: 1px;
-  margin-top: 50px;
+  margin: 32px 0;
   position: abosolute;
+  z-index: 2;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-container .animation {
   border-style: solid;
   border-width: 1px;
-  height: 50px;
-  width: 8.9%;
-  /* margin-left: 0%; */
-  /* margin-bottom: 5px; */
-  background-color: rgb(36, 34, 34);
+  z-index: 1;
+  height: 30px;
+  width: 20%;
+  margin: -56px 0;
+  background-color: #333;
   transition: 0.5s ease-in-out;
-  border-radius: 50px;
-
-  position:absolute;
-  
+ 
 }
 
-.two:hover ~ .animation {
-  background-color: blue;
+.about:hover ~ .animation {
+  margin-left: 20%;
+}
+.skills:hover ~ .animation {
+  margin-left: 40%;
+}
+.projects:hover ~ .animation {
+  margin-left: 60%;
+}
+.contact:hover ~ .animation {
+  margin-left: 80%;
+}
+
+.about:hover {
+  color: #fff;
 }
