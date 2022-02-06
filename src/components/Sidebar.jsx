@@ -1,15 +1,17 @@
 import React from "react";
+import { ProfileImage } from "./Profile-Image";
 
-function Sidebar(){
-
-  return(
+function Sidebar() {
+  return (
     <div>
-    <div className="profile-image">
-      <img src={require("/src/images/profile-image.jpg")} alt="Alexander Lake" />
+      <div className="profile-img">
+        <div className="img-border">
+          <ProfileImage />
+        </div>
+      </div>
+      <div className="sidebar">sidebar</div>
     </div>
-    <div className="sidebar">sidebar</div>
-    </div>
-  )
+  );
 }
 
 export default Sidebar;
