@@ -82,7 +82,7 @@ body ul {
   margin-top: auto;
   margin-bottom: 9px;
   overflow: auto;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 .nav-container {
@@ -90,58 +90,48 @@ body ul {
 }
 .menu-container {
   position: absolute;
-  width: 50%;
+  /* width: 30%; */
   right: 0%;
 }
 
 ul li {
   display: inline;
   text-align: center;
+  z-index: 0;
 }
 
 span {
   display: inline-block;
-  width: 20%;
-  padding: auto;
-  margin: 32px 0;
+  padding: 23px 20px;
+  margin: 5px 0;
   position: abosolute;
-  z-index: 2;
   color: #333;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 15px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  border-style: solid;
+  border-width: 1px;
+  letter-spacing: 4px;
 }
 
 .nav-container .animation {
-  border-style: solid;
-  border-width: 1px;
-  z-index: 1;
-  height: 30px;
-  width: 20%;
-  margin: -56px 0;
+   z-index: 1; 
+  width: 0;
+  margin: -29px 0;
   background-color: #333;
   transition: 0.5s ease-in-out;
- 
 }
 
 .about:hover ~ .animation {
-  margin-left: 20%;
+  margin-left: 17.79%;
 }
 .skills:hover ~ .animation {
-  margin-left: 40%;
+  margin-left: 36.53%;
 }
 .projects:hover ~ .animation {
-  margin-left: 60%;
+  margin-left: 54.4%;
 }
 .contact:hover ~ .animation {
-  margin-left: 80%;
+  margin-left: 77.7%;
 }
 
-.about:hover {
-  color: #fff;
-}
