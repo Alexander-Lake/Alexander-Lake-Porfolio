@@ -1,16 +1,18 @@
 import React from "react";
-import { Logo } from "./Header";
-import { Nav } from "./Nav";
+import { MobileHeader } from "./Header";
+import Main from "./Main";
 
 function App() {
   return (
-    <div className="container">
-      <Logo />
-      <Nav />
-      <div className="profile-image"></div>
-      <div className="main"></div>
-      <div className="copyright"></div>
-      <div className="social"></div>
+    <div className="grid-container">
+      <header className="header-container">
+        <MobileHeader />
+      </header>
+      <Main />
+      <footer className="footer-container">
+        <div className="copyright"></div>
+        <div className="social"></div>
+      </footer>
     </div>
   );
 }
