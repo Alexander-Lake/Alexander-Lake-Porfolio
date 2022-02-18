@@ -1,14 +1,16 @@
 import React from "react";
-import { Mountain } from "./Images";
+import { About } from "./About";
 import { Home } from "./Home";
 
-function Main(){
+
+function Main(props){
 
   return(
-    <div className="main-content">
-    <Home />
+    <div id="content" className={`main-content ${props.state === true ? "open": ""}`}>
+    <About />
     </div>
   )
 }
 
 export default Main;
+

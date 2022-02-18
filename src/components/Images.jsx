@@ -1,20 +1,11 @@
 import React from "react";
-import MobileBackground from '../images/mountain2.jpg'
-import Background from "../images/Mountain.jpg";
+import temple from "../images/temple.jpg";
 
 
-export function BackgroundImage() {
-  return (
-    <div className="background-img">
-      <img src={Background} alt="Mountain"></img>
-    </div>
-  );
-}
-
-export function Mountain(){
+export default function Background(){
   return(
     <div className="mobile-background-img">
-      <img src={MobileBackground} alt="Mountain"></img>
+      <img src={ temple } alt="temple"></img>
     </div>
   )
 }
