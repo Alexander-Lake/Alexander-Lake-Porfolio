@@ -7,6 +7,7 @@ function Main(props){
 
   return(
     <div id="content" className={`main-content ${props.state === true ? "open": ""}`}>
+    {/* <Home /> */}
     <About />
     </div>
   )

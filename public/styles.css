@@ -1,6 +1,8 @@
 :root {
   --clr-primary-300: #fff;
   --clr-primary-500: #333;
+  --clr--primary-400: #7d7789;
+  --clr--secondary-bg: #f4f9f9;
 
   --ff--primary: "Poppins", sans-serif;
   --ff--accent: "Gugi", monospace;
@@ -15,15 +17,22 @@ body,
 h1,
 h2,
 h3,
+h4,
 p,
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 body {
   font-family: var(--ff--primary);
+  color: var(--clr--primary-400);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 /* Grid layout */
@@ -164,7 +173,7 @@ body {
 
 .menu-container.open {
   top: 65px;
-  height: 65%;
+  height: auto;
 }
 
 .menu-container {
@@ -229,6 +238,7 @@ body {
 .main-content {
   grid-area: main;
   position: relative;
+  width: 100vw;
 }
 
 .mobile-background-img img {
@@ -286,3 +296,133 @@ body {
 
 /* About */
 
+.about-section {
+  height: 95vh;
+  bottom: 0;
+  position: relative;
+  padding: 125px 5% 0;
+  overflow-y: scroll;
+  background-color: var(--clr--secondary-bg);
+}
+.about-title,
+.education-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-title::after,
+.education-title::after {
+  display: inline-block;
+  content: "";
+  height: 1px;
+  width: 100vw;
+  background-color: var(--clr-primary-500);
+  margin: 0 5px;
+  position: relative;
+}
+
+.about-title h3,
+.education-title h3 {
+  width: fit-content;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--clr-primary-500);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.about-section .wrapper,
+.about-section .education {
+  margin-top: 55px;
+}
+
+.about-section .summary p {
+  margin-bottom: 15px;
+}
+
+.about-section .education .timeline {
+  position: relative;
+  margin-top: 35px;
+}
+
+.about-section .uni-list {
+  list-style-type: none;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.uni-list ul {
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.uni-list ul li {
+  margin: 0;
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 45px;
+}
+.uni-list ul li:last-child{
+  padding-bottom: 0;
+}
+.about-section .uni-list ul::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.uni-list ul li::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  background: #f6fbff;
+  border-radius: 100%;
+  border: solid 1px #ccc;
+  left: -9px;
+  top: 8px;
+}
+
+.about-section .timeline .list-inner {
+  display: flex;
+  width: 100%;
+ }
+
+.about-section .uni-list .date {
+  display: inline-block;
+  width: 40%;
+  padding-right: 20px;
+}
+.uni-list .date span {
+  display: inline-block;
+  padding: 5px 12px;
+  background-color: rgba(0,0,0,.05);
+  border-radius: 50px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.about-section .uni-list .school {
+  display: inline-block;
+  max-width: 60%;
+}
+
+.about-section .uni-list .school h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.about-section .uni-list .school span {
+  font-size: 14px;
+}
