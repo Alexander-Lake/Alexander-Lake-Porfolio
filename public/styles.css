@@ -35,24 +35,86 @@ body {
   font-size: 16px;
 }
 
-/* Grid layout */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-family: var(--ff--primary);
+  color: var(--clr-primary-500);
+  font-weight: 700;
+}
 
-.grid-container {
-  overflow: hidden;
-  display: grid;
-  height: 100vh;
-  width: auto;
+/**********
+ * LAYOUT *
+ **********/
+ .page-container {
+   /* height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative; */
+ }
+
+.main-content {
   position: relative;
-  grid-template-rows: auto;
-  grid-template-areas: "main";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: var(--clr--secondary-bg);
+  overflow: auto;
+}
+
+.main-content.open {
+  filter: blur(3px);
+}
+
+
+.content-container {
+  margin: 85px 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+}
+
+.page-title,
+.education-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 55px 0;
+}
+
+.page-title::after,
+.education-title::after {
+  display: inline-block;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--clr-primary-500);
+  margin: 0 5px;
+  position: relative;
+} 
+
+.page-title h3,
+.education-title h3 {
+  width: fit-content;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  white-space: nowrap;
 }
 
 /* Headers */
 
 .header-container {
-  grid-area: header;
   position: absolute;
   width: 100%;
+  top: 0;
 }
 
 /* Mobile Header */
@@ -60,10 +122,9 @@ body {
 .mobile-header-container {
   height: 4rem;
   width: 100%;
-  margin: 2px 1px;
   box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  position: absolute;
+  position: relative;
   z-index: 3;
   background: inherit;
   overflow: hidden;
@@ -85,8 +146,7 @@ body {
   margin: -20px;
 }
 
-.m-logo {
-  color: var(--clr-primary-300);
+.header-container .m-logo {
   background-color: black;
   font-family: var(--ff--accent);
   z-index: 3;
@@ -99,6 +159,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.m-logo h1 {
+  color: var(--clr-primary-300);
+  font-family: var(--ff--accent);
 }
 /* Mobile Header */
 .mobile-header-container .header-wrapper {
@@ -183,17 +247,19 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  top: -100vh;
+  top: -150vh;
+  height: 0;
   width: 100vw;
+  overflow: hidden;
   padding-bottom: 5rem;
   transition: all 0.3s ease;
-  overflow: hidden;
   box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.5);
   border-radius: 0px 0px 5px 5px;
 }
 
 .menu-items {
   display: block;
+  overflow-y: scroll;
 }
 .menu-items ul {
   list-style: none;
@@ -235,12 +301,6 @@ body {
   border-radius: 5px;
 }
 /* Main Content */
-.main-content {
-  grid-area: main;
-  position: relative;
-  width: 100vw;
-}
-
 .mobile-background-img img {
   width: 100%;
   max-width: 900px;
@@ -248,9 +308,6 @@ body {
   overflow: hidden;
 }
 
-.main-content.open {
-  filter: blur(3px);
-}
 
 .m-intro {
   position: relative;
@@ -280,7 +337,6 @@ body {
   margin-bottom: 15px;
   text-transform: uppercase;
   line-height: 1.7;
-  font-weight: 700;
 }
 
 .intro-container .line {
@@ -294,50 +350,7 @@ body {
   position: absolute;
 }
 
-/* About */
-
-.about-section {
-  height: 95vh;
-  bottom: 0;
-  position: relative;
-  padding: 125px 5% 0;
-  overflow-y: scroll;
-  background-color: var(--clr--secondary-bg);
-}
-.about-title,
-.education-title {
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-title::after,
-.education-title::after {
-  display: inline-block;
-  content: "";
-  height: 1px;
-  width: 100vw;
-  background-color: var(--clr-primary-500);
-  margin: 0 5px;
-  position: relative;
-}
-
-.about-title h3,
-.education-title h3 {
-  width: fit-content;
-  display: inline-block;
-  font-weight: 700;
-  color: var(--clr-primary-500);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  white-space: nowrap;
-}
-
-.about-section .wrapper,
-.about-section .education {
-  margin-top: 55px;
-}
+/* About Section*/
 
 .about-section .summary p {
   margin-bottom: 15px;
@@ -345,7 +358,6 @@ body {
 
 .about-section .education .timeline {
   position: relative;
-  margin-top: 35px;
 }
 
 .about-section .uni-list {
@@ -359,7 +371,6 @@ body {
   list-style-type: none;
   position: relative;
   display: inline-block;
-  padding-top: 10px;
 }
 
 .uni-list ul li {
@@ -370,7 +381,7 @@ body {
   padding-left: 20px;
   padding-bottom: 45px;
 }
-.uni-list ul li:last-child{
+.uni-list ul li:last-child {
   padding-bottom: 0;
 }
 .about-section .uni-list ul::before {
@@ -398,7 +409,7 @@ body {
 .about-section .timeline .list-inner {
   display: flex;
   width: 100%;
- }
+}
 
 .about-section .uni-list .date {
   display: inline-block;
@@ -408,7 +419,7 @@ body {
 .uni-list .date span {
   display: inline-block;
   padding: 5px 12px;
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 50px;
   font-size: 14px;
   white-space: nowrap;
@@ -425,4 +436,78 @@ body {
 }
 .about-section .uni-list .school span {
   font-size: 14px;
+}
+
+/* Skills Section */
+
+.skills-carousel {
+  position: relative;
+  /* width: 100%;
+  height: 100%; */
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text
+}
+
+.skills-carousel .card {
+  width: 12rem;
+  height: 20rem;
+  position: relative;
+  /* margin: 20px 30px; */
+  /* display: inline-flex; */
+  /* flex-direction: column; */
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.skills-carousel .skill-image {
+  width: 100%;
+  height: 70%;
+  position: relative;
+}
+
+.skills-carousel img {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card .inner {
+  width: 100%;
+  height: 30%;
+  bottom: 0%;
+  font-size: 40px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  color: var(--clr-primary-500);
+  border-top-color: var(--clr-primary-300);
+}
+
+.inner .skill-name {
+  margin: auto;
+}
+
+.card .skill-image.js {
+  background-color: #bce6eb;
+}
+.card .skill-image.html {
+  background-color: #fc7e2f;
+}
+.card .skill-image.css {
+  background-color: #76e3ff;
+}
+.card .skill-image.react {
+  background-color: #2c394b;
+}
+.card .skill-image.nodejs {
+  background-color: #519259;
+}
+.card .skill-image.mongo {
+  background-color: #ccf6c8;
 }

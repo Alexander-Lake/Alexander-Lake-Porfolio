@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className="grid-container">
+    <div className="page-container">
       <header className="header-container">
         <MobileHeader clickedState={renderContent} state={page.status} />
       </header>

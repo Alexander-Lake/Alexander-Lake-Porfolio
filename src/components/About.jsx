@@ -2,11 +2,11 @@ import React from "react";
 
 export function About() {
   return (
-    <div className="about-section">
-      <div className="about-title">
+    <div className="content-container">
+      <div className="page-title">
         <h3>About me</h3>
       </div>
-      <div className="wrapper">
+      <div className="about-section">
         <div className="summary">
           <p>
             Hello there! My name is <strong>Alexander Lake.</strong> I am a
@@ -53,7 +53,9 @@ export function About() {
                     </div>
                     <div className="school">
                       <h3>Northeastern State University</h3>
-                      <span>Bachelor of Business Administration Accounting</span>
+                      <span>
+                        Bachelor of Business Administration Accounting
+                      </span>
                     </div>
                   </div>
                 </li>
