@@ -7,6 +7,8 @@ import { Skills } from "./Skills";
 
 function Main(props){
 
+  
+
   return(
     <div className={`main-content ${props.state === true ? "open": ""}`}>
     {/* <Home /> */}
