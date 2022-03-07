@@ -1,9 +1,66 @@
-import React from "react";
+import { React, useState } from "react";
 import { GrLinkedin, GrGithub } from "react-icons/gr";
 
 function getDate() {
   const date = new Date().getFullYear();
   return date;
+}
+
+export function DesktopHeader(props) {
+  const [hoverPosition, setHoverPosition] = useState(0);
+  const [itemsWidth, setitemsWidth] = useState(116);
+
+  function handleClick(event) {
+    console.log(event.target);
+    setHoverPosition(event.target.offsetLeft);
+    setitemsWidth(event.target.offsetWidth);
+  }
+
+  return (
+    <div className="header">
+      <div className="logo">
+        <h1>Alexander Lake</h1>
+      </div>
+      <div className="menu-container">
+        <ul onMouseOver={handleClick}>
+          <li
+            onClick={() => {
+              props.renderPage("home");
+            }}
+            className="home"
+          >Home</li>
+          <li
+            onClick={() => {
+              props.renderPage("about");
+            }}
+            className="about"
+          >About</li>
+          <li
+            onClick={() => {
+              props.renderPage("skills");
+            }}
+            className="skills"
+          >Skills</li>
+          <li
+            onClick={() => {
+              props.renderPage("projects");
+            }}
+            className="projects"
+          >Projects</li>
+          <li
+            onClick={() => {
+              props.renderPage("contact");
+            }}
+            className="contact"
+          >Contact</li>
+        </ul>
+        <span
+          className="hover-block"
+          style={{ left: hoverPosition + "px", width: itemsWidth + "px" }}
+        ></span>
+      </div>
+    </div>
+  );
 }
 
 export function MobileHeader(props) {
@@ -23,22 +80,47 @@ export function MobileHeader(props) {
           <div className="inner-right"></div>
         </div>
       </div>
-      <div className={`menu-container ${props.state && "open"}`}>
-        <div className="menu-items">
+      <div className={`mobile__menu-container${props.state ? " open" : ""}`}>
+        <div className="m__menu-items">
           <ul>
-            <li className="home">
+            <li
+              onClick={() => {
+                props.renderPage("home");
+              }}
+              className="home"
+            >
               <span className="home">Home</span>
             </li>
-            <li className="about">
+            <li
+              onClick={() => {
+                props.renderPage("about");
+              }}
+              className="about"
+            >
               <span>About</span>
             </li>
-            <li className="skills">
+            <li
+              onClick={() => {
+                props.renderPage("skills");
+              }}
+              className="skills"
+            >
               <span className="skills">Skills</span>
             </li>
-            <li className="projects">
+            <li
+              onClick={() => {
+                props.renderPage("projects");
+              }}
+              className="projects"
+            >
               <span className="projects">Projects</span>
             </li>
-            <li className="contact">
+            <li
+              onClick={() => {
+                props.renderPage("contact");
+              }}
+              className="contact"
+            >
               <span className="contact">Contact</span>
             </li>
           </ul>
