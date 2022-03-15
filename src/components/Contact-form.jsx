@@ -12,7 +12,7 @@ export function ContactForm(props) {
     e.preventDefault();
 
     emailjs
-      .sendForm("gmai", "template_portfolio", form.current, "FBMivn8pO2-CDzZhB")
+      .sendForm("gmail", "template_portfolio", form.current, "FBMivn8pO2-CDzZhB")
       .then(
         (result) => {
           console.log(result.text);
