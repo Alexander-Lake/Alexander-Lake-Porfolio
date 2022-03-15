@@ -1,11 +1,7 @@
 import React, { useRef, useState } from "react";
-import JS from "../images/Javascript.png";
-import HTML5 from "../images/HTML5.png";
-import CSS from "../images/CSS3.png";
-import Mongo from "../images/MongoDB.png";
-import Nodejs from "../images/NodeJs.png";
-import ReactImg from "../images/ReactJS.png";
 import { Card } from "./Card";
+import { SkillList } from "./SkillList";
+
 
 export function Skills() {
   const carousel = useRef("");
@@ -41,70 +37,42 @@ export function Skills() {
     });
   }
   return (
-    <div className="skill-page">
-      <div className="skill-title">
-        <h3>Skills</h3>
+    <React.Fragment>
+      <div className="skill-page">
+        <div className="skill-title">
+          <h3>Skills</h3>
+        </div>
+        <div className="card-container">
+          {SkillList.map((skill) => (
+            <Card
+              key={skill.id}
+              logo={skill.logo}
+              alt={skill.alt}
+              name={skill.name}
+              class={skill.class}
+              id={skill.id}
+            />
+          ))}
+        </div>
+        <div
+          ref={carousel}
+          className="skills-carousel"
+          style={{ left: slide + "px" }}
+        >
+          {SkillList.map((skill) => (
+            <Card
+              key={skill.id}
+              handleclick={cardsCarousel}
+              logo={skill.logo}
+              alt={skill.alt}
+              name={skill.name}
+              class={skill.class}
+              id={skill.id}
+              position={cardClass[skill.id]}
+            />
+          ))}
+        </div>
       </div>
-      <div
-        ref={carousel}
-        className="skills-carousel"
-        style={{ left: slide + "px" }}
-      >
-        <Card
-          handleclick={cardsCarousel}
-          logo={JS}
-          alt="Javascript logo"
-          name="Javascript"
-          class="js"
-          id="1"
-          position={cardClass[1]}
-        />
-        <Card
-          handleclick={cardsCarousel}
-          logo={HTML5}
-          alt="HTML 5 logo"
-          name="HTML 5"
-          class="html"
-          id="2"
-          position={cardClass[2]}
-        />
-        <Card
-          handleclick={cardsCarousel}
-          logo={CSS}
-          alt="CSS 3 logo"
-          name="CSS 3"
-          class="css"
-          id="3"
-          position={cardClass[3]}
-        />
-        <Card
-          handleclick={cardsCarousel}
-          logo={ReactImg}
-          alt="ReactJs logo"
-          name="React Js"
-          class="react"
-          id="4"
-          position={cardClass[4]}
-        />
-        <Card
-          handleclick={cardsCarousel}
-          logo={Nodejs}
-          alt="NodeJs logo"
-          name="NodeJs"
-          class="nodejs"
-          id="5"
-          position={cardClass[5]}
-        />
-        <Card
-          handleclick={cardsCarousel}
-          logo={Mongo}
-          alt="MongoDB logo"
-          name="MongoDB"
-          class="mongo"
-          id="6"
-          position={cardClass[6]}
-        />
-      </div>
-    </div>
+    </React.Fragment>
   );
 }
