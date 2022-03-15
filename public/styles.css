@@ -632,7 +632,7 @@ h6 {
   background-color: var(--clr-primary-300);
   padding: 10px;
   top: 50%;
-  left: -59px;
+  left: 0;
   box-shadow: var(--sha--primary--blk);
 }
 
