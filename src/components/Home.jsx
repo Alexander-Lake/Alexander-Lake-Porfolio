@@ -1,5 +1,4 @@
 import React from "react";
-import homebg from "../images/homebg.jpg";
 import sidebarbg from "../images/profilebg.jpg";
 import profileimg from "../images/profile.jpg";
 
@@ -30,7 +29,6 @@ export function Home() {
                 <span className="line"></span>
               </div>
             </div>
-          {/* <img src={homebg} alt="space"></img> */}
         </div>
       </div>
     </React.Fragment>
