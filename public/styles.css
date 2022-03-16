@@ -47,7 +47,6 @@ body {
   letter-spacing: 0;
   font-weight: 400;
   font-size: 16px;
-  scrollbar-color: #999 #fff;
 }
 
 h1,
@@ -73,12 +72,12 @@ h6 {
   }
 }
 
-@keyframes spaceflight {
+@keyframes fadeIn {
   from {
-    object-position: 0 50%;
+    opacity: 0;
   }
   to {
-    object-position: 100% 50%;
+    opacity: 1;
   }
 }
 
@@ -104,8 +103,9 @@ h6 {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  min-height: 883px;
+  min-height: 850px;
 }
+
 .border-left {
   position: fixed;
   display: none;
@@ -247,7 +247,7 @@ h6 {
   z-index: 1;
   width: 350px;
   height: 267px;
-  margin-bottom: 100px;
+  margin-bottom: 201px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -282,6 +282,7 @@ h6 {
   border-radius: 5px;
   box-shadow: var(--sha--primary--blk);
   position: relative;
+  margin-top: 20px;
 }
 
 .profile-card .card-info h3 {
@@ -539,7 +540,7 @@ h6 {
 
 .footer-container {
   display: none;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 70px;
   left: 70px;
@@ -547,6 +548,8 @@ h6 {
   height: 70px;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  z-index: 22;
 }
 
 .footer-container .wrapper {
@@ -581,14 +584,13 @@ h6 {
   display: flex;
   width: 100%;
   height: 100%;
-  max-height: 842px;
   justify-content: center;
   background-color: var(--clr--secondary-bg);
 }
 
 .m__side-container .profile-card {
   min-height: 600px;
-  height: 100vh;
+  height: 100%;
 }
 
 .m__side-container .profile-card .top {
@@ -824,7 +826,6 @@ h6 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  overflow: hidden;
 }
 
 .skills-carousel {
@@ -972,13 +973,15 @@ h6 {
   overflow: hidden;
   border: 0;
   margin-bottom: 45px;
-  animation: slideUp 0.7s ease-in;
+  animation: fadeIn 0.9s ease-in;
 }
 
 .card__content {
   /* border-radius: 5px; */
   transition: transform 1s;
   transform-style: preserve-3d;
+  -webkit-transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
   width: 100%;
   height: 100%;
   border: 0;
@@ -986,6 +989,8 @@ h6 {
 
 .contact-card:hover .card__content {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -webkit-transition: transform 0.5s;
   transition: transform 0.5s;
 }
 
@@ -1009,6 +1014,7 @@ h6 {
   height: 100%;
   width: 100%;
   text-align: center;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -1028,6 +1034,7 @@ h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -1038,6 +1045,7 @@ h6 {
   background-color: var(--clr-primary-300);
   z-index: -3;
   bottom: 0;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   pointer-events: none;
   left: 9px;
@@ -1058,6 +1066,7 @@ h6 {
 
 .back {
   background: #000000;
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
@@ -1197,6 +1206,8 @@ h6 {
   }
 }
 
+
+
 @media screen and (min-width: 1044px) {
   .border-left,
   .border-right {
@@ -1214,6 +1225,12 @@ h6 {
     right: 70px;
   }
 
+  .page-container {
+    min-height: 927px;
+    bottom: 0;
+    top: 0;
+  }
+
   .main-content {
     position: absolute;
     width: auto;
@@ -1221,7 +1238,6 @@ h6 {
     bottom: 70px;
     left: 70px;
     right: 70px;
-    min-height: 1057px;
   }
 
   .m__side-container {
@@ -1251,7 +1267,10 @@ h6 {
 
   .side-container .card-info {
     background-color: #000000;
-    height: 188px;
+    min-height: 125px;
+    max-height: 150px;
+    height: 33%;
+    margin-top: 124px;
   }
 
   .side-container .profile-card .frame {
