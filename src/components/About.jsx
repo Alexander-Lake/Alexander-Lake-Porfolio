@@ -32,8 +32,8 @@ export function About() {
 
             <p>
               I have a masters degree in computer information systems from
-              Colorado State University. The program I completed is a STEM
-              program focusing on Data Governance and Data Analytics.
+              Colorado State University. The STEM program focuses on Data
+              Governance and Data Analytics.
             </p>
             <p>
               Now on a more personal level. Feel free to skip to the next
