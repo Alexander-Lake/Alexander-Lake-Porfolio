@@ -38,7 +38,7 @@ export function About() {
             <p>
               Now on a more personal level. Feel free to skip to the next
               section. I am a huge gamer. I love the Massive Multi-player Online
-              (MMO) genre. I enjoy solicizing and working with others to solve
+              (MMO) genre. I enjoy socializing and working with others to solve
               challenges within the games. My favorite film genre is Sci-fi. Two
               of my favorite films of all time are "Arrival" and "Interstellar".
               If you enjoy gaming or love sci-fi as much as I do, lets connect!
