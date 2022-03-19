@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DesktopHeader, MobileHeader } from "./Header";
 import { About } from "./About";
 import { Contact } from "./Contact-page";
@@ -9,12 +9,19 @@ import { getDate } from "./Header";
 import sidebarbg from "../images/profilebg.jpg";
 import profileimg from "../images/profile.jpg";
 import { Projects } from "./project-page";
+import ReactGA from 'react-ga'
+
 
 function App() {
   const [pageBlur, setPageBlur] = useState({
     status: false,
   });
   const [content, setContent] = useState("home");
+
+  useEffect(() => {
+    ReactGA.initialize('G-JWKQSP22XN');
+    ReactGA.pageview(window.location.pathname + window.location.search)
+    },[]);
 
   function handlePageContents(page) {
     setContent(page);
