@@ -17,7 +17,7 @@ function App() {
     status: false,
   });
   const [content, setContent] = useState("home");
-
+  
   useEffect(() => {
     ReactGA.initialize('G-JWKQSP22XN');
     ReactGA.pageview(window.location.pathname + window.location.search)
