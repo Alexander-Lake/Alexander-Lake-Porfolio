@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../images/Logo.png";
 import background from "../images/connect.jpg"
 import { Socials } from "./socials";
 
