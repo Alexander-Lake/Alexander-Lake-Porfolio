@@ -1,7 +1,6 @@
 import React from "react";
 import sidebarbg from "../images/profilebg.jpg";
 import profileimg from "../images/profile.jpg";
-import Logo from "../images/Logo.png";
 
 export function Home() {
   return (
@@ -24,7 +23,6 @@ export function Home() {
           </div>
         </div>
         <div className="bg-container">
-            {/* <img className="logo-background" src={Logo} alt= "Logo"></img> */}
             <div className="intro-container">
               <div className="intro-text">
                 <h3 className="name">Hello, Welcome!</h3>
